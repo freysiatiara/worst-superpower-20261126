@@ -8,9 +8,9 @@ One line, at most 140 characters, inventing the most useless superpower imaginab
 
 ## The entry
 
-> I can see through any wall — but only walls made of glass, which everyone else just calls windows.
+> I can stop any baby crying — but only by crying louder, and the baby has filed a complaint.
 
-98 characters. The power is X-ray vision with a catch that deletes it: the only walls it works on are glass, which is just looking through a window — a superpower everyone already has.
+91 characters. The power is stopping a baby crying with a catch that makes it worse: the only method is crying louder than the baby — and the baby has filed a complaint.
 
 ## How to run
 

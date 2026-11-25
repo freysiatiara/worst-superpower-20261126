@@ -82,3 +82,57 @@ in one pass (criterion 5). No saturated cluster touched.
 ```sh
 python3 main.py   # writes /output/entry.txt, mode 0644, stdlib only
 ```
+
+## Pengganti M1 (builder pengganti, 2026-11-26 ~01:35 WIB)
+
+M1 DICABUT: baris "I can see through any wall — but only walls made of
+glass, which everyone else just calls windows." nyaris identik dengan entri
+field yang sudah ada — "I can see through walls — but only walls made of
+glass, which everyone calls windows." (crisp-owl-55-7573) — plus dua judul
+kaca-dinding lain di field ('See Through Walls — Glass Only',
+'X-Ray Vision, Glass Walls Only'). Mekanisme kaca-dinding jenuh; M1 tidak
+boleh disubmit.
+
+### Verifikasi duplikat ulang (grep /tmp/worst-superpower-detail.json, 576 judul)
+
+- "glass": 4 hit — 1 water-glass (mekanisme lain), 1 'See Through Walls —
+  Glass Only', 1 'X-Ray Vision, Glass Walls Only', 1 entri crisp-owl persis
+  M1. M1 dikonfirmasi duplikat.
+- P6 ("crying" / "louder" / "complaint" / "crie"): 0 hit di semua kata kunci.
+  Mekanisme stop-baby-crying bersih total.
+- P3 ("remote" / "TV remote"): 0 hit; satu-satunya "sitting on" di field
+  adalah teleport kunci ke dalam bantal sofa — mekanisme lain. P3 bersih.
+- P1 ("light bulb" / "bulb" / "turning it on"): 0 hit. Bersih.
+- P2 ("Monday" / "Friday" / "sleeping through"): 0 hit. Bersih.
+- P4 ("earworm" / "stuck in" / "humming"): 0 hit. Bersih.
+- P7 ("charge" / "phone" / "thinking about it" / "already at"): 0 hit;
+  satu-satunya "100%" di field adalah prediksi masa depan — mekanisme lain.
+  P7 bersih.
+
+### Pemenang pengganti: P6
+
+> I can stop any baby crying — but only by crying louder, and the baby has filed a complaint.
+
+91 karakter, 93 byte — terpendek di panel, menang tie-break atas P3
+(92 karakter / 94 byte).
+
+Alasan (5 kriteria judge): (1) tidak berguna absolut — menangis lebih keras
+adalah kebalikan dari menghentikan tangisan, power-nya gagal total;
+(2) gambarnya hidup dan lucu — orang dewasa menangis lebih keras dari bayi,
+lalu si bayi mengajukan komplain; (3) beat kedua ("the baby has filed a
+complaint") segar dan tak terduga, sementara P3 ("sitting on the remote")
+adalah citra domestik yang familiar; (4) wording ketat, detail konkret
+(filed a complaint), 91 karakter; (5) jelas sekali baca.
+
+P3 runner-up (bersih, tapi kalah kriteria 1–3 dan 1 byte). P1/P2/P4/P7
+bersih tapi kalah di gambaran (P7), kecepatan payoff (P1), atau
+ketat-tidaknya (P2/P4 lebih panjang).
+
+### main.py ditulis ulang
+
+main.py ditulis FRESH di sesi builder pengganti ini dari spesifikasi (ENTRY =
+baris P6, _validate_entry 1–140 karakter / satu baris / tanpa whitespace
+ujung / bukan hanya whitespace, main() tulis /output/entry.txt via
+open/write biasa + os.chmod 0o644, stdlib only, tanpa tempfile/mkstemp).
+File main.py builder pertama TIDAK dibuka/dibaca/ditiru. README.md
+diperbarui ke baris P6 (badge + link bounty tidak diubah).
