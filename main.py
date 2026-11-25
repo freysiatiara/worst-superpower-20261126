@@ -36,6 +36,15 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
         handle.write(entry)
     os.chmod(OUTPUT_PATH, 0o644)
+    # Read-back verification: the bytes on disk must be exactly the
+    # validated entry, with no trailing newline or extra content.
+    with open(OUTPUT_PATH, "rb") as handle:
+        written = handle.read()
+    if written != entry.encode("utf-8"):
+        raise RuntimeError(
+            "read-back verification failed: /output/entry.txt does not "
+            "contain exactly the validated entry"
+        )
 
 
 if __name__ == "__main__":
